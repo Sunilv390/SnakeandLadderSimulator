@@ -1,5 +1,7 @@
 #!bin/bash -x
 
+function snakeLadder()
+{
 #CONSTANTS
 STARTPOSITION=0
 WINPOSITION=100
@@ -48,4 +50,18 @@ echo "Position of a Dice is "$COUNT
 done
 echo "User win "$position
 echo "For winning Game $COUNT times dice rolled"
+}
 
+#FUNCTION CALLING
+snakeLadder
+player1=$COUNT
+echo "Player1 Count "$player1
+snakeLadder
+player2=$COUNT
+echo "Player2 Count "$player2
+if [ $player1 -lt $player2 ]
+then
+	echo "Player 1 is Winner"
+else
+	echo "Player 2 is Winner"
+fi
