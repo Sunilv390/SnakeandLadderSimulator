@@ -3,6 +3,7 @@
 #CONSTANTS
 STARTPOSITION=0
 WINPOSITION=100
+COUNT=0
 
 #VARIABLE
 position=0
@@ -18,7 +19,7 @@ do
    case $randomOption in
       $NOPLAY)
       position=$position
-      echo "No play for the user"
+      echo "No play for the user" $position
       ;;
       $LADDER)
       position=$(($position+$randomRoll))
@@ -39,10 +40,12 @@ do
       then
          currentPosition=$position
       fi
-      echo "$position"
       ;;
    esac
+echo " "
+((COUNT++))
+echo "Position of a Dice is "$COUNT
 done
-echo "User win"$position
-
+echo "User win "$position
+echo "For winning Game $COUNT times dice rolled"
 
